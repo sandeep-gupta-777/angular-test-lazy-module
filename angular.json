@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "angular-test1": {
+    "imi-middleware-test": {
       "projectType": "application",
       "schematics": {
         "@schematics/angular:component": {
@@ -17,7 +17,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "outputPath": "dist/angular-test1",
+            "outputPath": "dist/imi-middleware-test",
             "index": "src/index.html",
             "main": "src/main.ts",
             "polyfills": "src/polyfills.ts",
@@ -67,18 +67,18 @@
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
           "options": {
-            "browserTarget": "angular-test1:build"
+            "browserTarget": "imi-middleware-test:build"
           },
           "configurations": {
             "production": {
-              "browserTarget": "angular-test1:build:production"
+              "browserTarget": "imi-middleware-test:build:production"
             }
           }
         },
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "angular-test1:build"
+            "browserTarget": "imi-middleware-test:build"
           }
         },
         "test": {
@@ -115,15 +115,15 @@
           "builder": "@angular-devkit/build-angular:protractor",
           "options": {
             "protractorConfig": "e2e/protractor.conf.js",
-            "devServerTarget": "angular-test1:serve"
+            "devServerTarget": "imi-middleware-test:serve"
           },
           "configurations": {
             "production": {
-              "devServerTarget": "angular-test1:serve:production"
+              "devServerTarget": "imi-middleware-test:serve:production"
             }
           }
         }
       }
     }},
-  "defaultProject": "angular-test1"
+  "defaultProject": "imi-middleware-test"
 }

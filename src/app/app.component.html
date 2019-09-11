@@ -1,20 +1,21 @@
-<!--The content below is only a placeholder and can be replaced.-->
-<div style="text-align:center">
-  <h1>
-    Welcome to {{ title }}!
-  </h1>
-  <img width="300" alt="Angular Logo" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNTAgMjUwIj4KICAgIDxwYXRoIGZpbGw9IiNERDAwMzEiIGQ9Ik0xMjUgMzBMMzEuOSA2My4ybDE0LjIgMTIzLjFMMTI1IDIzMGw3OC45LTQzLjcgMTQuMi0xMjMuMXoiIC8+CiAgICA8cGF0aCBmaWxsPSIjQzMwMDJGIiBkPSJNMTI1IDMwdjIyLjItLjFWMjMwbDc4LjktNDMuNyAxNC4yLTEyMy4xTDEyNSAzMHoiIC8+CiAgICA8cGF0aCAgZmlsbD0iI0ZGRkZGRiIgZD0iTTEyNSA1Mi4xTDY2LjggMTgyLjZoMjEuN2wxMS43LTI5LjJoNDkuNGwxMS43IDI5LjJIMTgzTDEyNSA1Mi4xem0xNyA4My4zaC0zNGwxNy00MC45IDE3IDQwLjl6IiAvPgogIDwvc3ZnPg==">
-</div>
-<h2>Here are some links to help you start: </h2>
+<h1>IMI BOT Middleware</h1>
+<p>Postman collection: <a href="https://www.getpostman.com/collections/83feb484383f7182f856">link</a></p>
+<h5>Room config</h5>
 <ul>
-  <li>
-    <h2><a target="_blank" rel="noopener" href="https://angular.io/tutorial">Tour of Heroes</a></h2>
-  </li>
-  <li>
-    <h2><a target="_blank" rel="noopener" href="https://angular.io/cli">CLI Documentation</a></h2>
-  </li>
-  <li>
-    <h2><a target="_blank" rel="noopener" href="https://blog.angular.io/">Angular blog</a></h2>
-  </li>
+  <li>Message will be broadcaster to the room with same config (imi_bot_middleware_token doesn't need to be same)</li>
+  <li>You can also use this api to push message to the room https://imi-bot-middleware.herokuapp.com/api/v1/socket/sendMessage</li>
 </ul>
+<textarea placeholder="configuration object" [(ngModel)]="config" name="" id="" cols="100" rows="10"></textarea>
+<button (click)="saveInLC(config)">Save</button>
+<br>
+
+<textarea spellcheck="true" autoComplete="true" autocorrect="true" rows="1" class="chat-input" [(ngModel)]="message"
+          placeholder="type message..." (keyup.enter)="addChat()"></textarea>
+<button (click)="addChat()" slot="end" class="send-chat-button">send</button>
+<br>
+<!--There are currently <strong>{{users}}</strong> users online. Start chatting!-->
+<h5>Messages</h5>
+<div *ngFor="let message of messages">
+  {{message}}
+</div>
 
